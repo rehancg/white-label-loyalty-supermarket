@@ -12,7 +12,11 @@ interface ProductsSectionProps {
 
 const ProductsSection: React.FC<ProductsSectionProps> = ({ products, onAddToCart }) => {
   return (
-    <Container maxWidth="lg" sx={LANDING_PAGE_STYLES.container}>
+    <Container 
+      maxWidth="lg" 
+      sx={LANDING_PAGE_STYLES.container}
+      id="products-section"
+    >
       <ProductsHeader />
       <ProductsGrid products={products} onAddToCart={onAddToCart} />
     </Container>

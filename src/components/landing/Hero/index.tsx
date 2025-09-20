@@ -4,7 +4,11 @@ import HeroContent from './HeroContent';
 import HeroIllustration from './HeroIllustration';
 import { HERO_STYLES } from './constants';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onShopNowClick?: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onShopNowClick }) => {
   const theme = useTheme();
 
   return (
@@ -19,7 +23,7 @@ const Hero: React.FC = () => {
     >
       <Container maxWidth="lg">
         <Box sx={HERO_STYLES.contentWrapper}>
-          <HeroContent />
+          <HeroContent onShopNowClick={onShopNowClick} />
           <HeroIllustration />
         </Box>
       </Container>

@@ -20,9 +20,19 @@ const LandingPage: React.FC = () => {
     dispatch(addToCart({ product, quantity }));
   };
 
+  const handleShopNowClick = () => {
+    const productsSection = document.getElementById('products-section');
+    if (productsSection) {
+      productsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <Box>
-      <Hero />
+      <Hero onShopNowClick={handleShopNowClick} />
       <FeatureCards />
       
       {loading && (
