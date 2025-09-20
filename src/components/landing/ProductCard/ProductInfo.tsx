@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 import { PRODUCT_CARD_STYLES } from './constants';
-import { Product } from '../data';
+import { Product } from '@/types';
 
 interface ProductInfoProps {
   product: Product;

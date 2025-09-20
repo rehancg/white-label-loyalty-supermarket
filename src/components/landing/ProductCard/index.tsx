@@ -4,7 +4,7 @@ import ProductImage from './ProductImage';
 import ProductInfo from './ProductInfo';
 import ProductActions from './ProductActions';
 import { PRODUCT_CARD_STYLES } from './constants';
-import { Product } from '../data';
+import { Product } from '@/types';
 
 interface ProductCardProps {
   product: Product;

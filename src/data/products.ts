@@ -1,20 +1,4 @@
-// Sample product data for the landing page @TODO from API
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  description: string;
-  category: string;
-  inStock: boolean;
-  isBogof: boolean;
-  currency: string;
-  currencySymbol: string;
-}
-
-export interface CartItem {
-  product: Product;
-  quantity: number;
-}
+import { Product } from '@/types';
 
 export const SAMPLE_PRODUCTS: Product[] = [
   {

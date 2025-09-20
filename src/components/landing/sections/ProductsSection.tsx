@@ -3,7 +3,7 @@ import { Container } from '@mui/material';
 import ProductsHeader from './ProductsHeader';
 import ProductsGrid from './ProductsGrid';
 import { LANDING_PAGE_STYLES } from './constants';
-import { Product } from '../data';
+import { Product } from '@/types';
 
 interface ProductsSectionProps {
   products: Product[];

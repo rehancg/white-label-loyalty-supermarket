@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { ShoppingCart } from '@mui/icons-material';
 import { PRODUCT_CARD_STYLES } from './constants';
-import { Product } from '../data';
+import { Product } from '@/types';
 
 interface ProductActionsProps {
   product: Product;

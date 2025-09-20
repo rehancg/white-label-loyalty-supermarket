@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeContextProvider, CustomThemeProvider } from "@/theme";
+import { QueryProvider } from "@/providers/QueryProvider";
 import Layout from "@/components/layout/Layout";
 
 const openSans = Open_Sans({
@@ -27,9 +28,11 @@ export default function RootLayout({
       >
         <ThemeContextProvider>
           <CustomThemeProvider>
-            <Layout>
-              {children}
-            </Layout>
+            <QueryProvider>
+              <Layout>
+                {children}
+              </Layout>
+            </QueryProvider>
           </CustomThemeProvider>
         </ThemeContextProvider>
       </body>

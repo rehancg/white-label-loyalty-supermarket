@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import ProductCard from '../ProductCard';
 import { LANDING_PAGE_STYLES } from './constants';
-import { Product } from '../data';
+import { Product } from '@/types';
 
 interface ProductsGridProps {
   products: Product[];

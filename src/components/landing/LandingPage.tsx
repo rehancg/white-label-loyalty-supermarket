@@ -5,9 +5,14 @@ import { Box } from '@mui/material';
 import Hero from './Hero';
 import FeatureCards from './FeatureCards';
 import ProductsSection from './sections/ProductsSection';
-import { SAMPLE_PRODUCTS, Product } from './data';
+import ErrorMessage from '../ui/ErrorMessage';
+import LoadingSpinner from '../ui/LoadingSpinner';
+import { Product } from '@/types';
+import { useProducts } from '@/hooks/useProducts';
 
 const LandingPage: React.FC = () => {
+  const { data: products = [], isLoading: loading, error, refetch } = useProducts();
+
   const handleAddToCart = (product: Product, quantity: number) => {
     // @TODO: Implement cart functionality
     console.log(`Added ${quantity} x ${product.name} to cart`);
@@ -17,7 +22,18 @@ const LandingPage: React.FC = () => {
     <Box>
       <Hero />
       <FeatureCards />
-      <ProductsSection products={SAMPLE_PRODUCTS} onAddToCart={handleAddToCart} />
+      
+      {loading && (
+        <LoadingSpinner message="Loading products..." />
+      )}
+      
+      {error && (
+        <ErrorMessage message={error.message} onRetry={refetch} />
+      )}
+      
+      {!loading && !error && (
+        <ProductsSection products={products} onAddToCart={handleAddToCart} />
+      )}
     </Box>
   );
 };
