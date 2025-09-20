@@ -5,6 +5,10 @@ A modern grocery checkout application built with **React, TypeScript, and Next.j
 ## 🌐 Live Demo
 👉 [View Demo](https://white-label-loyalty-supermarket.vercel.app/)
 
+## 🎥 Demo Video
+[![Watch the demo](https://img.shields.io/badge/▶%20Watch%20Demo-blue?style=for-the-badge)](https://streamable.com/ftlgcr)
+
+
 ## 🎯 Project Overview
 Built as a technical assessment for a grocery business startup, this app demonstrates a supermarket checkout with product selection, cart management, discounts, and a smooth multi-step checkout experience.
 
