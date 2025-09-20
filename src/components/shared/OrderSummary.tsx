@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Button, Paper, Divider } from '@mui/material';
+import { Box, Typography, Button, Paper, Divider, CircularProgress } from '@mui/material';
 import { Receipt } from '@mui/icons-material';
 import { CartItem } from '@/types';
 import { ORDER_SUMMARY_STYLES } from './constants';
@@ -16,6 +16,8 @@ interface OrderSummaryProps {
   buttonText?: string;
   onButtonClick?: () => void;
   showCartItems?: boolean;
+  disabled?: boolean;
+  loading?: boolean;
 }
 
 const OrderSummary: React.FC<OrderSummaryProps> = ({
@@ -27,6 +29,8 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
   buttonText = "Proceed to Checkout",
   onButtonClick,
   showCartItems = false,
+  disabled = false,
+  loading = false,
 }) => {
   return (
     <Paper
@@ -180,8 +184,16 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
             onClick={onButtonClick}
             sx={ORDER_SUMMARY_STYLES.actionButton}
             aria-label={`${buttonText} - Total: £${total.toFixed(2)}`}
+            disabled={disabled || loading}
           >
-            {buttonText}
+            {loading ? (
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <CircularProgress size={20} color="inherit" />
+                {buttonText}
+              </Box>
+            ) : (
+              buttonText
+            )}
           </Button>
         )}
       </Box>

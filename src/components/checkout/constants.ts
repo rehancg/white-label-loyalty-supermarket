@@ -91,6 +91,27 @@ export const CHECKOUT_STYLES = {
       fontSize: '1.25rem',
       color: 'primary.main',
     },
+    welcomeContainer: {
+      backgroundColor: 'success.light',
+      borderRadius: 2,
+      p: 3,
+      mb: 3,
+      border: '1px solid',
+      borderColor: 'success.main',
+    },
+    welcomeTitle: {
+      fontWeight: 600,
+      color: 'success.dark',
+      mb: 1,
+    },
+    welcomeText: {
+      fontWeight: 500,
+      color: 'text.primary',
+      mb: 1,
+    },
+    welcomeSubtext: {
+      color: 'text.secondary',
+    },
     formContainer: {
       display: 'flex',
       flexDirection: 'column',
@@ -136,6 +157,77 @@ export const CHECKOUT_STYLES = {
     guestText: {
       color: 'text.secondary',
       fontSize: '0.875rem',
+    },
+  },
+
+  // Order Success Modal styles
+  orderSuccessModal: {
+    dialog: {
+      borderRadius: 2,
+      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+    },
+    title: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      pb: 1,
+    },
+    titleContent: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 1,
+    },
+    successIcon: {
+      color: 'success.main',
+      fontSize: 28,
+    },
+    titleText: {
+      fontWeight: 600,
+    },
+    closeButton: {
+      color: 'text.secondary',
+    },
+    content: {
+      pt: 3,
+      pb: 2,
+    },
+    messageContainer: {
+      textAlign: 'center',
+      mb: 3,
+    },
+    messageText: {
+      mb: 2,
+      lineHeight: 1.6,
+    },
+    orderIdContainer: {
+      backgroundColor: 'grey.50',
+      borderRadius: 1,
+      p: 2,
+      border: '1px solid',
+      borderColor: 'grey.200',
+    },
+    orderIdLabel: {
+      mb: 0.5,
+    },
+    orderIdValue: {
+      fontFamily: 'monospace',
+      fontWeight: 600,
+      color: 'primary.main',
+    },
+    confirmationText: {
+      textAlign: 'center',
+      lineHeight: 1.5,
+    },
+    actions: {
+      p: 3,
+      pt: 2,
+    },
+    okButton: {
+      py: 1.5,
+      fontWeight: 600,
+      borderRadius: 2,
+      textTransform: 'none',
+      fontSize: '1rem',
     },
   },
 } as const;
