@@ -10,7 +10,6 @@ import {
   Container,
 } from '@mui/material';
 import Logo from './Logo';
-import SearchBar from './SearchBar';
 import LanguageSelector from './LanguageSelector';
 import ActionButtons from './ActionButtons';
 import MobileMenuButton from './MobileMenuButton';

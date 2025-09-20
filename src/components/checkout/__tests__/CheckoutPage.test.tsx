@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import userEvent from '@testing-library/user-event';
@@ -29,7 +29,7 @@ jest.mock('@/components/checkout/CheckoutHeader', () => {
 });
 
 jest.mock('@/components/checkout/LoginSection', () => {
-  return React.forwardRef(function MockLoginSection(props: any, ref: any) {
+  return React.forwardRef(function MockLoginSection(props: unknown, ref: unknown) {
     React.useImperativeHandle(ref, () => ({
       trigger: jest.fn().mockResolvedValue(true),
       getValues: jest.fn().mockReturnValue({
@@ -42,7 +42,7 @@ jest.mock('@/components/checkout/LoginSection', () => {
 });
 
 jest.mock('@/components/checkout/ShippingSection', () => {
-  return React.forwardRef(function MockShippingSection(props: any, ref: any) {
+  return React.forwardRef(function MockShippingSection(props: unknown, ref: unknown) {
     React.useImperativeHandle(ref, () => ({
       trigger: jest.fn().mockResolvedValue(true),
       getValues: jest.fn().mockReturnValue({
@@ -60,7 +60,7 @@ jest.mock('@/components/checkout/ShippingSection', () => {
 });
 
 jest.mock('@/components/checkout/PaymentSection', () => {
-  return React.forwardRef(function MockPaymentSection(props: any, ref: any) {
+  return React.forwardRef(function MockPaymentSection(props: unknown, ref: unknown) {
     React.useImperativeHandle(ref, () => ({
       trigger: jest.fn().mockResolvedValue(true),
       getValues: jest.fn().mockReturnValue({
@@ -74,7 +74,7 @@ jest.mock('@/components/checkout/PaymentSection', () => {
 });
 
 jest.mock('@/components/checkout/CartSummary', () => {
-  return function MockCartSummary(props: any) {
+  return function MockCartSummary(props: unknown) {
     return (
       <div data-testid="cart-summary">
         <button
@@ -92,7 +92,7 @@ jest.mock('@/components/checkout/CartSummary', () => {
 });
 
 jest.mock('@/components/checkout/OrderSuccessModal', () => {
-  return function MockOrderSuccessModal(props: any) {
+  return function MockOrderSuccessModal(props: unknown) {
     if (!props.open) return null;
     return (
       <div data-testid="order-success-modal">

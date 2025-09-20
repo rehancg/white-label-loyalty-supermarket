@@ -10,7 +10,7 @@ export async function GET() {
       data: SAMPLE_PRODUCTS,
       message: 'Products fetched successfully'
     });
-  } catch (error) {
+  } catch {
     // @TODO: Log error and Handle error
     return NextResponse.json(
       {

@@ -1,5 +1,5 @@
 // Import shared product icons utility
-import { PRODUCT_ICONS, getProductIcon } from '@/utils/productIcons';
+import { getProductIcon } from '@/utils/productIcons';
 
 // Common styles
 export const PRODUCT_CARD_STYLES = {

@@ -50,7 +50,7 @@ const ProductSummary: React.FC<ProductSummaryProps> = ({ cartItems }) => {
         role="list"
         aria-label="Cart items list"
       >
-        {cartItems.map((item, index) => (
+        {cartItems.map((item) => (
           <Card 
             key={item.product.id} 
             sx={CART_STYLES.productSummary.productCard}

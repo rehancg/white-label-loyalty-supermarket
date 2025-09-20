@@ -1,5 +1,5 @@
 import cartReducer, { addToCart, removeFromCart, updateQuantity, clearCart } from '@/store/cartSlice';
-import { Product, CartItem } from '@/types';
+import { Product } from '@/types';
 
 // Mock products for testing
 const mockProduct1: Product = {

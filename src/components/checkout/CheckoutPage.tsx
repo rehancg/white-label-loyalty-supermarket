@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Box, Container, Button, Alert, Snackbar, Typography } from '@mui/material';
 import { ArrowBack, ShoppingCart } from '@mui/icons-material';
 import { useRouter } from 'next/navigation';

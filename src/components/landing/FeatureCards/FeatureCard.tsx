@@ -3,7 +3,7 @@ import { Box, Typography, useTheme } from '@mui/material';
 import { FEATURE_CARDS_STYLES } from './constants';
 
 interface FeatureCardProps {
-  icon: React.ComponentType<{ sx?: any }>;
+  icon: React.ComponentType<{ sx?: object }>;
   title: string;
   description: string;
 }
