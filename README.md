@@ -1,6 +1,6 @@
 # 🛒 White Label Loyalty Supermarket
 
-A modern grocery checkout application built with **React, TypeScript, and Next.js**, showcasing a complete e-commerce checkout flow with advanced discount logic, responsive design, and strong frontend architecture.
+A modern grocery checkout application built with **React, TypeScript, and Next.js**, showcasing a complete e-commerce checkout flow with advanced discount logic, responsive design, and scalable frontend architecture.
 
 ## 🌐 Live Demo
 👉 [View Demo](https://white-label-loyalty-supermarket.vercel.app/)
