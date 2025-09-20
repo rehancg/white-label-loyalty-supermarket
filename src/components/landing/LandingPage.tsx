@@ -9,13 +9,15 @@ import ErrorMessage from '../ui/ErrorMessage';
 import LoadingSpinner from '../ui/LoadingSpinner';
 import { Product } from '@/types';
 import { useProducts } from '@/hooks/useProducts';
+import { useAppDispatch } from '@/store/hooks';
+import { addToCart } from '@/store/cartSlice';
 
 const LandingPage: React.FC = () => {
   const { data: products = [], isLoading: loading, error, refetch } = useProducts();
+  const dispatch = useAppDispatch();
 
   const handleAddToCart = (product: Product, quantity: number) => {
-    // @TODO: Implement cart functionality
-    console.log(`Added ${quantity} x ${product.name} to cart`);
+    dispatch(addToCart({ product, quantity }));
   };
 
   return (

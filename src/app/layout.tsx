@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeContextProvider, CustomThemeProvider } from "@/theme";
+import { ReduxProvider } from "@/providers/ReduxProvider";
 import { QueryProvider } from "@/providers/QueryProvider";
 import Layout from "@/components/layout/Layout";
 
@@ -13,7 +14,8 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "White Label Loyalty Supermarket",
-  description: "Your trusted local supermarket with great deals and loyalty rewards",
+  description:
+    "Your trusted local supermarket with great deals and loyalty rewards",
 };
 
 export default function RootLayout({
@@ -23,15 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${openSans.variable} antialiased`}
-      >
+      <body className={`${openSans.variable} antialiased`}>
         <ThemeContextProvider>
           <CustomThemeProvider>
             <QueryProvider>
-              <Layout>
-                {children}
-              </Layout>
+              <ReduxProvider>
+                <Layout>{children}</Layout>
+              </ReduxProvider>
             </QueryProvider>
           </CustomThemeProvider>
         </ThemeContextProvider>
