@@ -35,7 +35,7 @@ const calculateDiscounts = (items: CartItem[]) => {
   items.forEach(item => {
     if (item.product.isBogof) {
       // BOGOF: Buy 1, Get 1 Free
-      const freeItems = item.quantity / 2;
+      const freeItems = Math.floor(item.quantity / 2);
       
       // Customer pays for paid items, gets free items
       subtotal += (item.quantity * item.product.price);

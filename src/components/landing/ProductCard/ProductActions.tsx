@@ -11,7 +11,7 @@ interface ProductActionsProps {
 
 const ProductActions: React.FC<ProductActionsProps> = ({ product, onAddToCart }) => {
   const handleAddToCart = () => {
-    onAddToCart(product, product.isBogof ? 2 : 1);
+    onAddToCart(product, 1);
   };
 
   return (
