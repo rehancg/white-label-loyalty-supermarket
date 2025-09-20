@@ -230,4 +230,40 @@ export const CHECKOUT_STYLES = {
       fontSize: '1rem',
     },
   },
+
+  // Empty Cart styles
+  emptyCart: {
+    container: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '60vh',
+      textAlign: 'center',
+      gap: 3,
+    },
+    icon: {
+      fontSize: 80,
+      color: 'text.secondary',
+      opacity: 0.5,
+    },
+    title: {
+      fontWeight: 600,
+      color: 'text.primary',
+      mb: 2,
+    },
+    message: {
+      color: 'text.secondary',
+      maxWidth: '400px',
+      mb: 3,
+    },
+    continueButton: {
+      py: 1.5,
+      px: 4,
+      fontWeight: 600,
+      borderRadius: 2,
+      textTransform: 'none',
+      fontSize: '1rem',
+    },
+  },
 } as const;

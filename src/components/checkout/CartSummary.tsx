@@ -5,6 +5,7 @@ import OrderSummary from '../shared/OrderSummary';
 import { CHECKOUT_STYLES } from './constants';
 import { CheckoutRequest, CheckoutResponse } from '@/types/checkout';
 import { LoginFormData, ShippingFormData, PaymentFormData } from '@/schemas/checkout';
+import OrderService from '@/services/OrderService';
 
 interface CartSummaryProps {
   checkoutMode: 'login' | 'guest';
@@ -52,11 +53,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({
         country: formData.shippingData!.country,
         state: formData.shippingData!.state,
       },
-      payment: {
-        cardNumber: formData.paymentData!.cardNumber,
-        expiryDate: formData.paymentData!.expiryDate,
-        cvc: formData.paymentData!.cvc,
-      },
+      payment_method: 'card',
       cart: {
         items: cart.items,
         subtotal: cart.subtotal,
@@ -68,15 +65,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({
   };
 
   const submitOrder = async (payload: CheckoutRequest): Promise<CheckoutResponse> => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          success: true,
-          orderId: `ORD-${Date.now()}`,
-          message: 'Order placed successfully!',
-        });
-      }, 2000);
-    });
+    return await OrderService.submitOrder(payload);
   };
 
   const handlePlaceOrder = async () => {
@@ -101,8 +90,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({
         return;
       }
 
-      const payload = prepareCheckoutPayload(currentFormData);
-      
+      const payload = prepareCheckoutPayload(currentFormData);      
       const response = await submitOrder(payload);
       
       if (response.success) {
@@ -113,7 +101,9 @@ const CartSummary: React.FC<CartSummaryProps> = ({
         setSubmitError(response.message || 'Failed to place order. Please try again.');
       }
     } catch (error) {
-      setSubmitError('An unexpected error occurred. Please try again.');
+      console.error('Order submission error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.';
+      setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }

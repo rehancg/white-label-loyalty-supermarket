@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { Box, Container, Button, Alert, Snackbar } from '@mui/material';
-import { ArrowBack } from '@mui/icons-material';
+import React, { useState, useRef, useEffect } from 'react';
+import { Box, Container, Button, Alert, Snackbar, Typography } from '@mui/material';
+import { ArrowBack, ShoppingCart } from '@mui/icons-material';
 import { useRouter } from 'next/navigation';
-import { useAppDispatch } from '@/store/hooks';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { clearCart } from '@/store/cartSlice';
 import CheckoutHeader from './CheckoutHeader';
 import LoginSection, { LoginSectionRef } from './LoginSection';
@@ -28,6 +28,7 @@ const CheckoutPage: React.FC = () => {
   const [userEmail, setUserEmail] = useState<string>('');
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const cart = useAppSelector(state => state.cart);
 
   // Refs to access form validation methods
   const loginFormRef = useRef<LoginSectionRef>(null);
@@ -71,7 +72,6 @@ const CheckoutPage: React.FC = () => {
   const handleGuestCheckout = () => {
     setIsLoggedIn(true);
     setUserEmail('');
-    console.log('Guest checkout selected');
   };
 
   const handleShippingSubmit = (data: ShippingFormData) => {
@@ -125,6 +125,67 @@ const CheckoutPage: React.FC = () => {
     
     return { loginData, shippingData, paymentData };
   };
+
+  // Show empty cart message if cart is empty
+  if (cart.items.length === 0) {
+    return (
+      <Box 
+        sx={CHECKOUT_STYLES.page.pageContainer}
+        role="main"
+        aria-labelledby="empty-cart-title"
+      >
+        <Container maxWidth="lg" sx={CHECKOUT_STYLES.page.container}>
+          <Button
+            startIcon={<ArrowBack />}
+            onClick={() => router.push('/')}
+            sx={CHECKOUT_STYLES.page.backButton}
+            aria-label="Go back to home page"
+          >
+            Back to Home
+          </Button>
+
+          <Box sx={CHECKOUT_STYLES.emptyCart.container}>
+            <ShoppingCart 
+              sx={CHECKOUT_STYLES.emptyCart.icon}
+              aria-hidden="true"
+            />
+            
+            <Typography 
+              variant="h4" 
+              component="h1" 
+              id="empty-cart-title"
+              sx={CHECKOUT_STYLES.emptyCart.title}
+            >
+              Your cart is empty
+            </Typography>
+            
+            <Typography 
+              variant="body1" 
+              sx={CHECKOUT_STYLES.emptyCart.message}
+            >
+              You need to add items to your cart before proceeding to checkout.
+            </Typography>
+            
+            <Button
+              variant="contained"
+              size="large"
+              onClick={() => router.push('/')}
+              sx={CHECKOUT_STYLES.emptyCart.continueButton}
+            >
+              Continue Shopping
+            </Button>
+          </Box>
+        </Container>
+        {/* Order Success Modal */}
+        <OrderSuccessModal
+          open={showOrderSuccessModal}
+          orderId={orderId}
+          onClose={handleCloseOrderSuccessModal}
+          onNavigateHome={handleNavigateHome}
+        />
+      </Box>
+    );
+  }
 
   return (
     <Box 
@@ -212,14 +273,6 @@ const CheckoutPage: React.FC = () => {
           {orderSuccess}
         </Alert>
       </Snackbar>
-
-      {/* Order Success Modal */}
-      <OrderSuccessModal
-        open={showOrderSuccessModal}
-        orderId={orderId}
-        onClose={handleCloseOrderSuccessModal}
-        onNavigateHome={handleNavigateHome}
-      />
     </Box>
   );
 };

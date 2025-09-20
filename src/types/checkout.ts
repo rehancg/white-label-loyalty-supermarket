@@ -13,11 +13,7 @@ export interface CheckoutRequest {
     country: string;
     state: string;
   };
-  payment: {
-    cardNumber: string;
-    expiryDate: string;
-    cvc: string;
-  };
+  payment_method: string;
   cart: {
     items: CartItem[];
     subtotal: number;
