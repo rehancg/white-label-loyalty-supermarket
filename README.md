@@ -2,6 +2,9 @@
 
 A modern grocery checkout application built with **React, TypeScript, and Next.js**, showcasing a complete e-commerce checkout flow with advanced discount logic, responsive design, and strong frontend architecture.
 
+## 🌐 Live Demo
+👉 [View Demo](https://white-label-loyalty-supermarket.vercel.app/)
+
 ## 🎯 Project Overview
 Built as a technical assessment for a grocery business startup, this app demonstrates a supermarket checkout with product selection, cart management, discounts, and a smooth multi-step checkout experience.
 
@@ -20,6 +23,7 @@ Built as a technical assessment for a grocery business startup, this app demonst
   - BOGOF on Asparagus (G95)  
 - **Checkout Flow**: Cart → Shipping → Payment → Confirmation  
 - **Responsive UI**: Mobile-first design with Material-UI  
+- **Dark Mode**: Toggle for light/dark themes with MUI theming  
 - **Error & Loading States**: User-friendly feedback  
 - **Validation**: Zod-powered forms with React Hook Form  
 
@@ -144,10 +148,6 @@ npm test -- --watch
 - **User Authentication**: Login/signup functionality
 - **Order History**: Track previous orders
 - **Inventory Management**: Stock levels and availability
-- **Payment Integration**: Real payment processing
-- **Admin Dashboard**: Product and order management
-- **Search & Filtering**: Enhanced product discovery
-- **Reviews & Ratings**: Customer feedback system
 
 ### Technical Debt
 - **Component Testing**: More comprehensive UI component tests

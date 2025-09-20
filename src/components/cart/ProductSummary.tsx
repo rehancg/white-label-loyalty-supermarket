@@ -107,7 +107,7 @@ const ProductSummary: React.FC<ProductSummaryProps> = ({ cartItems }) => {
                   </Typography>
 
                   {/* Quantity and Total */}
-                  <Box sx={CART_STYLES.productSummary.quantityAndTotal}>
+                  <Box mx={CART_STYLES.productSummary.quantityAndTotal} sx={CART_STYLES.productSummary.quantityAndTotalMobile}>
                     <Box sx={CART_STYLES.productSummary.quantitySection}>
                       <Typography 
                         variant="body2" 
@@ -158,7 +158,7 @@ const ProductSummary: React.FC<ProductSummaryProps> = ({ cartItems }) => {
                       </Box>
                     </Box>
 
-                    <Box sx={CART_STYLES.productSummary.totalSection}>
+                    <Box mx={CART_STYLES.productSummary.totalSection} sx={CART_STYLES.productSummary.totalSectionMobile}>
                       <Typography 
                         variant="h6" 
                         sx={CART_STYLES.productSummary.itemTotal}

@@ -12,8 +12,6 @@ import {
 import Logo from './Logo';
 import LanguageSelector from './LanguageSelector';
 import ActionButtons from './ActionButtons';
-import MobileMenuButton from './MobileMenuButton';
-import MobileDrawer from './MobileDrawer';
 import { HEADER_STYLES } from './constants';
 
 interface HeaderProps {
@@ -48,14 +46,8 @@ const Header: React.FC<HeaderProps> = ({
         <Container>
         <Toolbar sx={HEADER_STYLES.toolbar}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {isMobile && (
-              <MobileMenuButton onToggle={handleDrawerToggle} />
-            )}
-            
             <Logo />
           </Box>
-
-          {/* {!isMobile && <SearchBar />} */}
 
           <Box sx={HEADER_STYLES.actionsContainer}>
             <LanguageSelector
@@ -72,11 +64,6 @@ const Header: React.FC<HeaderProps> = ({
         </Toolbar>
         </Container>
       </AppBar>
-
-      <MobileDrawer 
-        open={mobileOpen} 
-        onClose={handleDrawerToggle} 
-      />
     </>
   );
 };

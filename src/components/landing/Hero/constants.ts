@@ -17,10 +17,10 @@ export const HERO_STYLES = {
     mb: 6,
   },
   containerLight: {
-    backgroundColor: '#F8FAFC',
+    backgroundColor: 'background.paper',
   },
   containerDark: {
-    backgroundColor: 'grey.900',
+    backgroundColor: 'background.paper',
   },
   contentWrapper: {
     display: 'flex',

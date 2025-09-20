@@ -1,9 +1,9 @@
 // Header constants and static data
 export const LANGUAGES = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  // { code: 'es', name: 'Español', flag: '🇪🇸' },
+  // { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  // { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
 ] as const;
 
 export const MOBILE_DRAWER_WIDTH = 250;

@@ -190,6 +190,9 @@ export const CART_STYLES = {
       justifyContent: 'space-between',
       alignItems: 'center',
     },
+    quantityAndTotalMobile: {
+      display: 'block',
+    },
     quantitySection: {
       display: 'flex',
       alignItems: 'center',
@@ -238,6 +241,13 @@ export const CART_STYLES = {
     totalSection: {
       display: 'flex',
       alignItems: 'center',
+      gap: 2,
+    },
+    totalSectionMobile: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'end',
+      marginTop: 2,
       gap: 2,
     },
     itemTotal: {
