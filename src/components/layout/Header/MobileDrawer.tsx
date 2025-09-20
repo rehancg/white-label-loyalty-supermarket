@@ -10,10 +10,10 @@ import {
   Divider,
 } from '@mui/material';
 import {
-  LocalGroceryStore,
   ShoppingCart,
   Person,
 } from '@mui/icons-material';
+import Image from 'next/image';
 import { HEADER_STYLES } from './constants';
 
 interface MobileDrawerProps {
@@ -25,7 +25,13 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ open, onClose }) => {
   const drawerContent = (
     <Box sx={HEADER_STYLES.drawer}>
       <Box sx={HEADER_STYLES.drawerHeader}>
-        <LocalGroceryStore sx={HEADER_STYLES.drawerLogo} />
+        <Image
+          src="/logo.png"
+          alt="White Label Loyalty Supermarket Logo"
+          width={48}
+          height={48}
+          style={{ marginBottom: '8px', borderRadius: '4px' }}
+        />
         <Typography variant="h6" color="primary">
           White Label Loyalty
         </Typography>

@@ -1,9 +1,5 @@
-import { Container } from '@mui/material';
+import LandingPage from '@/components/landing/LandingPage';
 
 export default function Home() {
-  return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-        {/* TODO */}
-    </Container>
-  );
+  return <LandingPage />;
 }

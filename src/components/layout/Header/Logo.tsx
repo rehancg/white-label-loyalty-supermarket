@@ -1,27 +1,18 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
-import { LocalGroceryStore } from '@mui/icons-material';
+import { Box } from '@mui/material';
+import Image from 'next/image';
 import { HEADER_STYLES } from './constants';
 
 const Logo: React.FC = () => {
   return (
     <Box sx={HEADER_STYLES.logoContainer}>
-      <LocalGroceryStore sx={HEADER_STYLES.logoIcon} />
-      <Box>
-        <Typography 
-          variant="h6" 
-          component="div" 
-          sx={HEADER_STYLES.logoText}
-        >
-          White Label Loyalty
-        </Typography>
-        <Typography 
-          variant="caption" 
-          sx={HEADER_STYLES.logoSubtext}
-        >
-          Supermarket
-        </Typography>
-      </Box>
+      <Image
+        src="/logo.png"
+        alt="White Label Loyalty Supermarket Logo"
+        width={100}
+        height={40}
+        style={HEADER_STYLES.logoImage}
+      />
     </Box>
   );
 };

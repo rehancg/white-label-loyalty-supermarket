@@ -11,42 +11,51 @@ export const BREAKPOINTS = {
 } as const;
 
 export const TYPOGRAPHY = {
-  fontFamily: 'var(--font-geist-sans), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+  fontFamily: 'var(--font-open-sans), "Open Sans", "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
   h1: {
     fontSize: '2.5rem',
     fontWeight: 700,
+    lineHeight: 1.2,
   },
   h2: {
     fontSize: '2rem',
     fontWeight: 600,
+    lineHeight: 1.3,
   },
   h3: {
     fontSize: '1.75rem',
     fontWeight: 600,
+    lineHeight: 1.3,
   },
   h4: {
     fontSize: '1.5rem',
     fontWeight: 500,
+    lineHeight: 1.4,
   },
   h5: {
     fontSize: '1.25rem',
     fontWeight: 500,
+    lineHeight: 1.4,
   },
   h6: {
     fontSize: '1rem',
     fontWeight: 500,
+    lineHeight: 1.4,
   },
   body1: {
     fontSize: '1rem',
-    lineHeight: 1.5,
+    lineHeight: 1.6,
+    fontWeight: 400,
   },
   body2: {
     fontSize: '0.875rem',
-    lineHeight: 1.43,
+    lineHeight: 1.5,
+    fontWeight: 400,
   },
   button: {
     textTransform: 'none',
-    fontWeight: 500,
+    fontWeight: 600,
+    fontSize: '0.875rem',
   },
 } as const;
 
@@ -91,47 +100,46 @@ export const COMPONENT_OVERRIDES = {
   },
 } as const;
 
-// Light Theme
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#2563EB',
-      light: '#3B82F6',
-      dark: '#1D4ED8',
+      main: '#0061D5',   // a strong, professional blue (similar to what their CTAs likely use)
+      light: '#338AF2',
+      dark: '#004FB5',
       contrastText: '#FFFFFF',
     },
     secondary: {
-      main: '#059669', 
-      light: '#34D399',
-      dark: '#047857',
+      main: '#00C4CC',   // a teal-cyan accent for secondary (subtle, modern)
+      light: '#6FF7FC',
+      dark: '#0098A0',
       contrastText: '#FFFFFF',
     },
     success: {
-      main: '#059669', 
+      main: '#2ECC71',
       contrastText: '#FFFFFF',
     },
     error: {
-      main: '#DC2626',
-      light: '#EF4444',
-      dark: '#B91C1C',
+      main: '#E74C3C',
+      light: '#F1948A',
+      dark: '#C0392B',
       contrastText: '#FFFFFF',
     },
     warning: {
-      main: '#F59E0B',
-      light: '#FBBF24',
-      dark: '#B45309',
+      main: '#F1C40F',
+      light: '#F7DC6F',
+      dark: '#B7950B',
       contrastText: '#000000',
     },
     background: {
-      default: '#FAFAFA',
-      paper: '#FFFFFF',
+      default: '#FFFFFF',
+      paper: '#F7FAFC',  // very light grey-blue hint
     },
     text: {
-      primary: '#111827',
-      secondary: '#6B7280',
+      primary: '#121212',  // dark but soft
+      secondary: '#4A4A4A',
     },
-    divider: '#E5E7EB',
+    divider: '#E5E8EB',   // light grey-blue
   },
   breakpoints: BREAKPOINTS,
   typography: TYPOGRAPHY,
@@ -141,47 +149,48 @@ export const lightTheme = createTheme({
   components: COMPONENT_OVERRIDES,
 });
 
-// Dark Theme
+
+// Dark Theme (revised)
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#3B82F6',
-      light: '#60A5FA',
-      dark: '#2563EB',
+      main: '#338AF2',
+      light: '#5AAEFF',
+      dark: '#0061D5',
       contrastText: '#FFFFFF',
     },
     secondary: {
-      main: '#34D399',
-      light: '#6EE7B7',
-      dark: '#059669',
-      contrastText: '#000000',
+      main: '#00A5AD',
+      light: '#33C9D0',
+      dark: '#008189',
+      contrastText: '#FFFFFF',
     },
     success: {
-      main: '#34D399',
+      main: '#2ECC71',
       contrastText: '#000000',
     },
     error: {
-      main: '#F87171',
-      light: '#FCA5A5',
-      dark: '#DC2626',
+      main: '#E74C3C',
+      light: '#F1948A',
+      dark: '#C0392B',
       contrastText: '#000000',
     },
     warning: {
-      main: '#FBBF24',
-      light: '#FCD34D',
-      dark: '#D97706',
+      main: '#F1C40F',
+      light: '#F7DC6F',
+      dark: '#B7950B',
       contrastText: '#000000',
     },
     background: {
-      default: '#111827',
-      paper: '#1F2937',
+      default: '#121A26',   // very dark navy/charcoal
+      paper: '#1E2733',     // slightly lighter surface
     },
     text: {
-      primary: '#F9FAFB',
-      secondary: '#9CA3AF',
+      primary: '#E5E5E5',
+      secondary: '#A0A0A0',
     },
-    divider: '#374151',
+    divider: '#2A3545',
   },
   breakpoints: BREAKPOINTS,
   typography: TYPOGRAPHY,

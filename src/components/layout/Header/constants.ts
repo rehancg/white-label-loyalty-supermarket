@@ -25,10 +25,9 @@ export const HEADER_STYLES = {
     alignItems: 'center',
     cursor: 'pointer',
   },
-  logoIcon: {
-    fontSize: 32,
-    color: 'primary.main',
-    mr: 1,
+  logoImage: {
+    marginRight: '8px',
+    borderRadius: '4px',
   },
   logoText: {
     fontWeight: 700,
@@ -81,11 +80,6 @@ export const HEADER_STYLES = {
   drawerHeader: {
     p: 2,
     textAlign: 'center',
-  },
-  drawerLogo: {
-    fontSize: 40,
-    color: 'primary.main',
-    mb: 1,
   },
   listItem: {
     cursor: 'pointer',

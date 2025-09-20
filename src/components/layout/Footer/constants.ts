@@ -11,12 +11,11 @@ export const COMPANY_INFO = {
 
 export const FOOTER_STYLES = {
   footer: {
-    backgroundColor: 'grey.900',
+    backgroundColor: 'background.paper',
     color: 'grey.100',
     mt: 'auto',
   },
   bottomBar: {
-    backgroundColor: 'grey.950',
     py: 3,
   },
   bottomContent: {
@@ -38,7 +37,7 @@ export const FOOTER_STYLES = {
     flexWrap: 'wrap',
   },
   link: {
-    color: 'grey.400',
+    color: 'grey.800',
     textDecoration: 'none',
     fontSize: '0.875rem',
     '&:hover': {
@@ -46,6 +45,6 @@ export const FOOTER_STYLES = {
     },
   },
   copyright: {
-    color: 'grey.400',
+    color: 'grey.800',
   },
 } as const;

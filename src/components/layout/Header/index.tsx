@@ -7,6 +7,7 @@ import {
   Box,
   useTheme,
   useMediaQuery,
+  Container,
 } from '@mui/material';
 import Logo from './Logo';
 import SearchBar from './SearchBar';
@@ -42,9 +43,10 @@ const Header: React.FC<HeaderProps> = ({
     <>
       <AppBar 
         position="sticky" 
-        elevation={2}
+        elevation={0}
         sx={HEADER_STYLES.appBar}
       >
+        <Container>
         <Toolbar sx={HEADER_STYLES.toolbar}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             {isMobile && (
@@ -54,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({
             <Logo />
           </Box>
 
-          {!isMobile && <SearchBar />}
+          {/* {!isMobile && <SearchBar />} */}
 
           <Box sx={HEADER_STYLES.actionsContainer}>
             <LanguageSelector
@@ -69,6 +71,7 @@ const Header: React.FC<HeaderProps> = ({
             />
           </Box>
         </Toolbar>
+        </Container>
       </AppBar>
 
       <MobileDrawer 
