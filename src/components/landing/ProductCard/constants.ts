@@ -1,11 +1,5 @@
-export const PRODUCT_ICONS = {
-  bakery: '🍰',
-  'pet care': '🐱',
-  vegetables: '🥬',
-  fruits: '🍎',
-  beverages: '☕',
-  default: '📦',
-} as const;
+// Import shared product icons utility
+import { PRODUCT_ICONS, getProductIcon } from '@/utils/productIcons';
 
 // Common styles
 export const PRODUCT_CARD_STYLES = {
@@ -91,7 +85,5 @@ export const PRODUCT_CARD_STYLES = {
   },
 } as const;
 
-export const getProductIcon = (category: string): string => {
-  const normalizedCategory = category.toLowerCase();
-  return PRODUCT_ICONS[normalizedCategory as keyof typeof PRODUCT_ICONS] || PRODUCT_ICONS.default;
-};
+// Re-export the shared utility for backward compatibility
+export { getProductIcon };

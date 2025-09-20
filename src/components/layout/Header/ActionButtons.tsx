@@ -27,7 +27,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   const cartItems = useAppSelector(state => state.cart.totalItems);
 
   const handleCartClick = () => {
-    router.push('/checkout');
+    router.push('/cart');
   };
 
   return (
